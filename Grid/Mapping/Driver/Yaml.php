@@ -93,8 +93,8 @@ class Yaml implements DriverInterface
         }
 
         $groupBys = isset($content[$class]["Source"]["groupBy"])? $content[$class]["Source"]["groupBy"] : array();
-        foreach($groupBys as $group => $groupBy) {
-            $this->groupBy[$class][$group] = $groupBy;
+        foreach($groupBys as $groupBy) {
+            $this->groupBy[$class][$group][] = $groupBy;
         }
 
         $filterables = isset($content[$class]["Source"]["filterable"]) ? $content[$class]["Source"]["filterable"] : array();
